@@ -3,13 +3,13 @@ import { Label } from './style'
 
 type Props = {
     children:  JSX.Element;
-    labelText?: string;
+    labelText: string;
     
 }
 
 const index = ({children, labelText}: Props) => {
   return (
-    <Label>{children}</Label>
+    <Label>{labelText.toUpperCase()}{children}</Label>
   )
 }
 

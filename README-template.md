@@ -67,25 +67,6 @@ npm install react-hook-form
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
 **Note: Delete this note and the content within this section and replace with your own learnings.**
 
@@ -98,6 +79,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - [Gradient on input border](https://stackoverflow.com/questions/33054514/how-to-apply-linear-gradient-to-input-border) - This helped me when i had trouble in put a linear-gradient color on input border
+
+- [Reactive value from form](https://stackoverflow.com/questions/57086672/element-implicitly-has-an-any-type-because-expression-of-type-string-cant-b) - This helped me to put in the input a reactive value from the form object 
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
