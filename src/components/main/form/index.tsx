@@ -26,19 +26,19 @@ const Index = () => {
           </Label>
 
           <Label labelText='card number'>
-            <Input placeholder='e.g 1234 5678 9123 0000' form={form} setForm={setForm} field={'cardNumber'}></Input>
+            <Input placeholder='e.g 1234 5678 9123 0000' form={form} setForm={setForm} field={'cardNumber'} maxLength={16}></Input>
           </Label>
 
           <DateCVC>
             <Label labelText='exp. date (mm/yy)'>
                 <MonthAndYear>
-                  <Input placeholder='MM' form={form} setForm={setForm} field={'month'}></Input>
-                  <Input placeholder='YY' form={form} setForm={setForm} field={'year'}></Input>
+                  <Input placeholder='MM' form={form} setForm={setForm} field={'month'} maxLength={2}></Input>
+                  <Input placeholder='YY' form={form} setForm={setForm} field={'year'} maxLength={2}></Input>
                 </MonthAndYear>      
             </Label>
 
             <Label labelText='cvc'>
-              <Input placeholder='e.g 123' form={form} setForm={setForm} field={'cvc'}></Input>
+              <Input placeholder='e.g 123' form={form} setForm={setForm} field={'cvc'} maxLength={3}></Input>
             </Label>
           </DateCVC>
           <Button />
