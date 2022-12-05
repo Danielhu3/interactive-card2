@@ -1,4 +1,5 @@
 import React from 'react'
+import  {oneValue}  from '../../../Hooks/useForm';
 import { Input } from './style'
 
 type Props = {
@@ -17,16 +18,11 @@ type Props = {
 
 }
 const index = ({placeholder, form, setForm, field, maxLength}: Props) => {
+  const thisInputValue = oneValue({field,form,setForm})
   
-
-  function set(actualField: string, value: string){
-    setForm(oldValues=>({...oldValues, [field]:value}))
-    console.log(form)
-
-
-  }
   return (
-    <Input placeholder={placeholder} onChange={(e)=> set(field, e.target.value)} 
+    <Input placeholder={placeholder} 
+    onChange={(e)=> thisInputValue.onChange(e.target.value)}
     value={form[field as keyof typeof form]}
     maxLength={maxLength && maxLength}
     >
