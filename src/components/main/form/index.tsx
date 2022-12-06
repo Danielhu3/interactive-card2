@@ -12,31 +12,33 @@ const Index = () => {
     {
       cardholderName:{
         value:'',
-        error: false
+        error: ''
       },
       cardNumber:{
         value:'',
-        error: false
+        error: ''
       },
       month:{
         value:'',
-        error: false
+        error: ''
       },
       year:{
         value:'',
-        error: false
+        error: ''
       },
       cvc:{
         value:'',
-        error: false
+        error: ''
       },
     }
   )
 
 
-
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>){
+    event.preventDefault()
+  }
   return (
-    <Form>
+    <Form onSubmit={(e)=>handleSubmit(e)}>
           <Label labelText='cardholder name'>
             <Input placeholder='e.g Jane Appleseed' form={form} setForm={setForm} field={'cardholderName'}></Input>
           </Label>
@@ -57,7 +59,7 @@ const Index = () => {
               <Input placeholder='e.g 123' form={form} setForm={setForm} field={'cvc'} maxLength={3}></Input>
             </Label>
           </DateCVC>
-          <Button />
+          <Button form={form}/>
     </Form>
   )
 }
