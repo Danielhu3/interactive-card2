@@ -75,6 +75,30 @@ type formValuesProps = {
     };
     };
 
+    setForm: React.Dispatch<React.SetStateAction<{
+      cardholderName: {
+        value: string;
+        error: string;
+    };
+    cardNumber: {
+        value: string;
+        error: string;
+    };
+    month: {
+        value: string;
+        error: string;
+    };
+    year: {
+      value: string;
+      error: string;
+    };
+    cvc: {
+      value: string;
+      error: string;
+    };
+      
+  }>>;
+
 }
 const oneValue = ({ field, form, setForm}: oneValueProps) => {
 
@@ -85,7 +109,7 @@ const oneValue = ({ field, form, setForm}: oneValueProps) => {
       }
       return
     }
-    //setForm(oldValues=>({...oldValues, [field]:{'value':value}}))
+
     setForm(oldValues=>({...oldValues, [field]: {'value':value, 'error': form[field as keyof typeof form].error}}))
 
     return
@@ -93,13 +117,33 @@ const oneValue = ({ field, form, setForm}: oneValueProps) => {
   return {onChange}
 }
 
-const formValues = ({form}:formValuesProps) => {
+const formValues = ({form,setForm}:formValuesProps) => {
+  function setError(key:string, error:string){
+    setForm(oldValues=>({...oldValues, [key]: {'value':form[key as keyof typeof form].value, 'error': error}}))
+
+  }
   function validate(){
-    console.log(form['cardNumber' as keyof typeof form].error)
-    console.log(form)
+    for (const [key, values] of Object.entries(form)){
+      console.log(form)
+      if(values.value.length === 0){
+        setError(key,"Can't be blank")
+      } 
+      else if(key === 'cardNumber'){
+        if(!/^[0-9\b]+$/.test(values.value)){
+          setError(key,'Wrong format, numbers only')
+        }
+      }
+
+      else{
+        setError(key, '')
+      }
+
+      
+    }
   }
   return {validate}
 }
 export {oneValue, formValues}
 
 //blank >> too short >>> numbers only
+// to short will use regex

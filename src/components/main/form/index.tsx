@@ -59,7 +59,7 @@ const Index = () => {
               <Input placeholder='e.g 123' form={form} setForm={setForm} field={'cvc'} maxLength={3}></Input>
             </Label>
           </DateCVC>
-          <Button form={form}/>
+          <Button form={form} setForm={setForm}/>
     </Form>
   )
 }

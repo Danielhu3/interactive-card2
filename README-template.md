@@ -67,6 +67,14 @@ npm install react-hook-form
 
 ### What I learned
 
+### Object field getting deleted on set values
+<img src='src/screenshots/formState.png'>
+- This is the state object that i was trying to update one value
+
+<img src='src/screenshots/setFormFixing.png'>
+- On example one, when i was trying to update the field 'value', the field 'error' was getting deleted
+- On example two, i get the error value himself and pass it again
+
 
 **Note: Delete this note and the content within this section and replace with your own learnings.**
 
