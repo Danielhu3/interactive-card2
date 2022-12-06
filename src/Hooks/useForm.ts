@@ -155,5 +155,3 @@ const formValues = ({form,setForm}:formValuesProps) => {
 }
 export {oneValue, formValues}
 
-//blank >> too short >>> numbers only
-// to short will use regex
