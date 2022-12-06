@@ -7,14 +7,52 @@ type Props = {
     field: string;
     maxLength?: number;
 
-    form: { cardholderName: string; cardNumber: string; month: string; year: string; cvc: string; };
+    form: {
+      cardholderName: {
+          value: string;
+          error: boolean;
+      };
+      cardNumber: {
+          value: string;
+          error: boolean;
+      };
+      month: {
+          value: string;
+          error: boolean;
+      };
+      year: {
+        value: string;
+        error: boolean;
+      };
+      cvc: {
+        value: string;
+        error: boolean;
+      };
+      };
+
     setForm: React.Dispatch<React.SetStateAction<{
-      cardholderName: string;
-      cardNumber: string;
-      month: string;
-      year: string;
-      cvc: string;
-  }>>
+      cardholderName: {
+        value: string;
+        error: boolean;
+    };
+    cardNumber: {
+        value: string;
+        error: boolean;
+    };
+    month: {
+        value: string;
+        error: boolean;
+    };
+    year: {
+      value: string;
+      error: boolean;
+    };
+    cvc: {
+      value: string;
+      error: boolean;
+    };
+      
+  }>>;
 
 }
 const index = ({placeholder, form, setForm, field, maxLength}: Props) => {
@@ -23,12 +61,12 @@ const index = ({placeholder, form, setForm, field, maxLength}: Props) => {
   return (
     <Input placeholder={placeholder} 
     onChange={(e)=> thisInputValue.onChange(e.target.value)}
-    value={form[field as keyof typeof form]}
+    value={form[field as keyof typeof form].value}
     maxLength={maxLength && maxLength}
     >
 
     </Input>
   )
 }
-
+// eu posso criar um state para só mostrar os erros após clicar no botao. mas, validar os inputs onblur
 export default index

@@ -1,17 +1,57 @@
 import React from 'react'
-type Props = {
-  setForm: React.Dispatch<React.SetStateAction<{
-    cardholderName: string;
-    cardNumber: string;
-    month: string;
-    year: string;
-    cvc: string;
-}>>;
-  form: { cardholderName: string; cardNumber: string; month: string; year: string; cvc: string; };
+type oneValueProps = {
   field:string;
 
+  form: {
+    cardholderName: {
+        value: string;
+        error: boolean;
+    };
+    cardNumber: {
+        value: string;
+        error: boolean;
+    };
+    month: {
+        value: string;
+        error: boolean;
+    };
+    year: {
+      value: string;
+      error: boolean;
+    };
+    cvc: {
+      value: string;
+      error: boolean;
+    };
+    };
+
+    setForm: React.Dispatch<React.SetStateAction<{
+      cardholderName: {
+        value: string;
+        error: boolean;
+    };
+    cardNumber: {
+        value: string;
+        error: boolean;
+    };
+    month: {
+        value: string;
+        error: boolean;
+    };
+    year: {
+      value: string;
+      error: boolean;
+    };
+    cvc: {
+      value: string;
+      error: boolean;
+    };
+      
+  }>>;
+  
+
 }
-const oneValue = ({ field, form, setForm}: Props) => {
+const oneValue = ({ field, form, setForm}: oneValueProps) => {
   function onChange(value:string){
     if(field === 'month' || field === 'year' || field === 'cvc'){
       if(/^[0-9\b]+$/.test(value) || value.length === 0){
@@ -25,7 +65,7 @@ const oneValue = ({ field, form, setForm}: Props) => {
   return {onChange}
 }
 
-const form = () => {
+const formValues = () => {
   return {}
 }
-export {oneValue, form}
+export {oneValue, formValues}

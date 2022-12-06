@@ -10,13 +10,29 @@ const Index = () => {
 
   const [form, setForm] = React.useState(
     {
-      cardholderName:'',
-      cardNumber:'',
-      month:'',
-      year:'',
-      cvc:''
+      cardholderName:{
+        value:'',
+        error: false
+      },
+      cardNumber:{
+        value:'',
+        error: false
+      },
+      month:{
+        value:'',
+        error: false
+      },
+      year:{
+        value:'',
+        error: false
+      },
+      cvc:{
+        value:'',
+        error: false
+      },
     }
   )
+
 
 
   return (
