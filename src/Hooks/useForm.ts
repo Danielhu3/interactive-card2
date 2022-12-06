@@ -100,6 +100,9 @@ type formValuesProps = {
   }>>;
 
 }
+
+
+
 const oneValue = ({ field, form, setForm}: oneValueProps) => {
 
   function onChange(value:string){
@@ -118,27 +121,34 @@ const oneValue = ({ field, form, setForm}: oneValueProps) => {
 }
 
 const formValues = ({form,setForm}:formValuesProps) => {
+  const sizes = {
+    cardNumber: 16,
+    month: 2,
+    year: 2,
+    cvc:3,
+  }
   function setError(key:string, error:string){
     setForm(oldValues=>({...oldValues, [key]: {'value':form[key as keyof typeof form].value, 'error': error}}))
 
   }
   function validate(){
     for (const [key, values] of Object.entries(form)){
-      console.log(form)
+      setError(key, '')
+      
       if(values.value.length === 0){
         setError(key,"Can't be blank")
       } 
+
+      else if(sizes[key as keyof typeof sizes] && values.value.length < sizes[key as keyof typeof sizes]){
+        setError(key,'Too short')
+      }
+      
       else if(key === 'cardNumber'){
         if(!/^[0-9\b]+$/.test(values.value)){
           setError(key,'Wrong format, numbers only')
         }
       }
 
-      else{
-        setError(key, '')
-      }
-
-      
     }
   }
   return {validate}
