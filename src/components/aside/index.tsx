@@ -10,6 +10,7 @@ import { Aside } from './style'
 const index = () => {
   return (
     <Aside>
+
       <Card side='front'>
         <CardLogo />
         <CardNumber />
@@ -21,7 +22,10 @@ const index = () => {
           </Date>
         </Info>
       </Card>
-      <Card side='back'/>
+
+      <Card side='back'>
+        <InfoItem text='' defaultValue='000'/>
+      </Card>
     </Aside>
   )
 }

@@ -23,7 +23,12 @@ export const Card = styled.div.attrs((props: {side:string}) => props)`
     padding: 2rem;
     `
     
-    : ''};
+    : `
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    padding: 5rem;
+    `};
     
 
 
