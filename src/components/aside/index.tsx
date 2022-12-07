@@ -1,9 +1,13 @@
 import React from 'react'
+import  Card  from './card/'
 import { Aside } from './style'
 
 const index = () => {
   return (
-    <Aside></Aside>
+    <Aside>
+      <Card side='front'/>
+      <Card side='back'/>
+    </Aside>
   )
 }
 

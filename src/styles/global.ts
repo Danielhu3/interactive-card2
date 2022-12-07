@@ -15,7 +15,7 @@ export default createGlobalStyle`
     }
 
     body{
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         font-weight: 500;
     }
 

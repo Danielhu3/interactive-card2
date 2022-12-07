@@ -7,5 +7,6 @@ export const Form = styled.form`
 
     gap: 3.5rem;
 
-    margin: 0 min(2rem)
+    max-width:34rem;
+    margin-left: 15%;
 `
