@@ -8,7 +8,7 @@ type Props = {
 }
 
 const index = ({children, labelText}: Props) => {
-  console.log(children)
+  //console.log(children)
   return (
     <Label>{labelText.toUpperCase()}{children}</Label>
   )

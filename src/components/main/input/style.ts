@@ -12,7 +12,7 @@ export const Input = styled.input.attrs((props: {placeholder: string, error:stri
     color: hsl(278, 68%, 11%);
     font-weight: 700;
 
-    
+   
     
     &::placeholder{
         content: ${props => props.placeholder};

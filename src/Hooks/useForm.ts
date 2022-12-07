@@ -113,6 +113,10 @@ const oneValue = ({ field, form, setForm}: oneValueProps) => {
       return
     }
 
+    if(field === 'cardNumber'){
+      value = value.replace(/\s/g, '').replace(/(.{4})/g, '$1 ').trim().slice(0, 19);
+    }
+
     setForm(oldValues=>({...oldValues, [field]: {'value':value, 'error': form[field as keyof typeof form].error}}))
 
     return
@@ -122,7 +126,7 @@ const oneValue = ({ field, form, setForm}: oneValueProps) => {
 
 const formValues = ({form,setForm}:formValuesProps) => {
   const sizes = {
-    cardNumber: 16,
+    cardNumber: 19,
     month: 2,
     year: 2,
     cvc:3,

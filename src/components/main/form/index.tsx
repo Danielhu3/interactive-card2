@@ -71,7 +71,7 @@ const Index = ({form, setForm}: Props) => {
           </Label>
 
           <Label labelText='card number'>
-            <Input placeholder='e.g 1234 5678 9123 0000' form={form} setForm={setForm} field={'cardNumber'} maxLength={16}></Input>
+            <Input placeholder='e.g 1234 5678 9123 0000' form={form} setForm={setForm} field={'cardNumber'} maxLength={19}></Input>
             {form.cardNumber.error ? <Error text={form.cardNumber.error}/> : <></>}
           </Label>
 
