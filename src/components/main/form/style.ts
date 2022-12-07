@@ -6,7 +6,7 @@ export const Form = styled.form`
     flex-wrap: wrap;
     flex-direction: column;
 
-    gap: 2rem;
+    gap: 3.5rem;
 
     margin: 0 min(2rem)
 `
