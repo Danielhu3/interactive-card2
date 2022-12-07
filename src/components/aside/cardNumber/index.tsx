@@ -2,11 +2,11 @@ import React from 'react'
 import { CardNumber } from './style'
 
 type Props = {
-    cardnumber?: string;
+    cardNumber: string;
 }
-const index = ({cardnumber}: Props) => {
+const index = ({cardNumber}: Props) => {
   return (
-    <CardNumber>{cardnumber ? cardnumber: '0000 0000 0000 0000'}</CardNumber>
+    <CardNumber>{cardNumber ? cardNumber: '0000 0000 0000 0000'}</CardNumber>
   )
 }
 

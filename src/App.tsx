@@ -6,14 +6,37 @@ import GlobalStyles from './styles/global';
 
 
 function App() {
-
+  const [form, setForm] = React.useState(
+    {
+      cardholderName:{
+        value:'',
+        error: ''
+      },
+      cardNumber:{
+        value:'',
+        error: ''
+      },
+      month:{
+        value:'',
+        error: ''
+      },
+      year:{
+        value:'',
+        error: ''
+      },
+      cvc:{
+        value:'',
+        error: ''
+      },
+    }
+  )
   return (
     <div className="App">
       <GlobalStyles />
-      <Aside />
+      <Aside form={form}/>
 
       <Main>
-        <Form />
+        <Form form={form} setForm={setForm} />
       </Main>
 
       

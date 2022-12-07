@@ -7,32 +7,57 @@ import  Input from '../input/';
 import  Label  from '../label/';
 import  Error  from '../error/';
 
-const Index = () => {
+type Props = {
+  form: {
+    cardholderName: {
+        value: string;
+        error: string;
+    };
+    cardNumber: {
+        value: string;
+        error: string;
+    };
+    month: {
+        value: string;
+        error: string;
+    };
+    year: {
+      value: string;
+      error: string;
+    };
+    cvc: {
+      value: string;
+      error: string;
+    };
+    };
 
-  const [form, setForm] = React.useState(
-    {
-      cardholderName:{
-        value:'',
-        error: ''
-      },
-      cardNumber:{
-        value:'',
-        error: ''
-      },
-      month:{
-        value:'',
-        error: ''
-      },
-      year:{
-        value:'',
-        error: ''
-      },
-      cvc:{
-        value:'',
-        error: ''
-      },
-    }
-  )
+  setForm: React.Dispatch<React.SetStateAction<{
+    cardholderName: {
+      value: string;
+      error: string;
+  };
+  cardNumber: {
+      value: string;
+      error: string;
+  };
+  month: {
+      value: string;
+      error: string;
+  };
+  year: {
+    value: string;
+    error: string;
+  };
+  cvc: {
+    value: string;
+    error: string;
+  };
+    
+}>>;
+}
+const Index = ({form, setForm}: Props) => {
+
+  
 
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>){
