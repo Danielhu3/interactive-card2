@@ -1,5 +1,5 @@
 import React from 'react';
-import Cards from './components/aside';
+import Aside from './components/aside';
 import Main  from './components/main/';
 import Form  from './components/main/form/';
 import GlobalStyles from './styles/global';
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyles />
-      <Cards />
+      <Aside />
 
       <Main>
         <Form />

@@ -3,10 +3,11 @@ import { Card } from './style'
 
 type Props = {
     side:string;
+    children?: JSX.Element | JSX.Element[]
 }
-const index = ({side}:Props) => {
+const index = ({side, children}:Props) => {
   return (
-    <Card side={side}></Card>
+    <Card side={side}>{children}</Card>
   )
 }
 
