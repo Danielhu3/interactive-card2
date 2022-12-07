@@ -64,7 +64,7 @@ const index = ({placeholder, form, setForm, field, maxLength}: Props) => {
     onChange={(e)=> thisInputValue.onChange(e.target.value)}
     value={form[field as keyof typeof form].value}
     maxLength={maxLength && maxLength}
-    >
+    error={form[field as keyof typeof form].error}>
     </Input>
     </>
   )

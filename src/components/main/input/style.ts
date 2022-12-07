@@ -1,11 +1,11 @@
 import styled from "styled-components";
-export const Input = styled.input.attrs((props: {placeholder: string}) => props)`
+export const Input = styled.input.attrs((props: {placeholder: string, error:string}) => props)`
     display: block;
     width: 100%;
     padding: 1rem 2rem 1rem;
 
     border-radius: 0.8rem;
-    border: solid 1px hsl(270, 3%, 87%);
+    border: solid 1px ${props => props.error ? 'red': 'hsl(270, 3%, 87%)'};
     margin-top: 0.5rem;
     outline: none;
 
