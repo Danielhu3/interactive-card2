@@ -8,4 +8,8 @@ export const Button = styled.button`
     margin-top: 1.5rem;
 
     cursor: pointer;
+
+    &:hover{
+        background-color: hsla(278, 68%, 11%,0.8);
+    }
 `
