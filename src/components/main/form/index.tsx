@@ -6,6 +6,7 @@ import  DateCVC  from '../dateCVC/';
 import  Input from '../input/';
 import  Label  from '../label/';
 import  Error  from '../error/';
+import  CompleteIcon  from '../completeIcon/';
 
 type Props = {
   form: {
@@ -107,6 +108,7 @@ const Index = ({form, setForm}: Props) => {
   ) 
   return (
   <Form onSubmit={(e)=> handleSubmit(e)}>
+    <CompleteIcon />
     <Button text='Continue'/>
   </Form>
   )
