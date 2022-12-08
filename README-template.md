@@ -72,8 +72,10 @@ npm install react-hook-form
 - This is the state object that i was trying to update one value
 
 <img src='src/screenshots/setFormFixing.png'>
-- On example one, when i was trying to update the field 'value', the field 'error' was getting deleted
-- On example two, i get the error value himself and pass it again
+<ul> 
+<li>On example one, when i was trying to update the field 'value', the field 'error' was getting deleted </li>
+<li>On example two, i get the error value himself and pass it again </li>
+</ul>
 
 ### Setting credit card mask to input
 <code> value = value.replace(/\s/g, '').replace(/(.{4})/g, '$1 ').trim() </code>

@@ -149,7 +149,7 @@ const formValues = ({form,setForm}:formValuesProps) => {
       }
       
       else if(key === 'cardNumber'){
-        if(!/^[0-9\b]+$/.test(values.value)){
+        if(/[^0-9\s]/g.test(values.value)){
           setError(key,'Wrong format, numbers only')
         }
       }
