@@ -44,6 +44,7 @@ function App() {
   );
 }
 
+// tentar entender o codigo de regex do cardnumber que eu copiei
 // consertar o erro de 'only numbers'
 
 // cards vao ocupar a grid da parte colorida e serão jogadas pro lado pra comportar o layout

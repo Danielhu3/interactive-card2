@@ -75,6 +75,12 @@ npm install react-hook-form
 - On example one, when i was trying to update the field 'value', the field 'error' was getting deleted
 - On example two, i get the error value himself and pass it again
 
+### Setting credit card mask to input
+<code> value = value.replace(/\s/g, '').replace(/(.{4})/g, '$1 ').trim() </code>
+- First replace remove unexpecteds spaces
+- second replace apply space between each 4 char
+- trim removes space after the last 4 char group 
+
 
 **Note: Delete this note and the content within this section and replace with your own learnings.**
 
@@ -89,6 +95,9 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Gradient on input border](https://stackoverflow.com/questions/33054514/how-to-apply-linear-gradient-to-input-border) - This helped me when i had trouble in put a linear-gradient color on input border
 
 - [Reactive value from form](https://stackoverflow.com/questions/57086672/element-implicitly-has-an-any-type-because-expression-of-type-string-cant-b) - This helped me to put in the input a reactive value from the form object 
+
+- [Credit card input mask](https://github.com/cosmoart/Interactive-card-details-form) - This helped me apply credit card mask to input 
+
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
