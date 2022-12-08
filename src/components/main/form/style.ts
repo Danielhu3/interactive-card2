@@ -9,4 +9,9 @@ export const Form = styled.form`
 
     max-width:34rem;
     margin-left: 15%;
+
+    @media screen and (max-width: 900px){
+        margin:0;   
+    }
+
 `

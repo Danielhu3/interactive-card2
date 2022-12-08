@@ -29,6 +29,20 @@ export const Card = styled.div.attrs((props: {side:string}) => props)`
     justify-content:flex-end;
     padding: 5rem;
     `};
+    @media screen and (max-width: 900px){
+        margin:0;
+        position:absolute;
+        transform: scale(0.8);
+
+        ${props => props.side === 'front' ? `
+        top:12rem;
+        left:5%;
+        z-index:2;
+        `
+        :`
+        z-index:1;
+        `}
+    }
     
 
 

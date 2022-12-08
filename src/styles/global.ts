@@ -25,4 +25,13 @@ export default createGlobalStyle`
         grid-template-columns: 1fr 2fr;
         grid-template-areas: 'aside main';
     }
+
+    @media screen and (max-width: 900px){
+        .App{
+            grid-template-columns: none;
+            grid-template-rows: 1fr 2fr;
+            grid-template-areas: 'aside'
+                                  'main';
+        }
+    }
 `
