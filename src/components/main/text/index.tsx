@@ -3,7 +3,7 @@ import { Text } from './style'
 
 const index = () => {
   return (
-    <Text>We've added your card details</Text>
+    <Text>We've added your card details.</Text>
   )
 }
 

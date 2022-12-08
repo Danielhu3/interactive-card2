@@ -1,11 +1,11 @@
 import styled from "styled-components";
-export const Form = styled.form`
+export const Form = styled.form.attrs((props: {isSubmited:boolean}) => props)`
 
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 
-    gap: 3.5rem;
+    gap: ${props => props.isSubmited ? '2rem' : '3.5rem'};
 
     max-width:34rem;
     margin-left: 15%;

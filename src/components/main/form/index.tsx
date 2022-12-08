@@ -67,20 +67,23 @@ const Index = ({form, setForm}: Props) => {
       for (const key of Object.keys(form)){
         setForm(oldValues=>({...oldValues, [key]: {'value':'', 'error': ''}}))
       }
-      //setIsSubmited(false)
+      setIsSubmited(false)
       return
     }
 
 
-
-    
-    
+    for (const key of Object.keys(form)){
+      if(form[key as keyof typeof form].error){
+        return
+      }   
+    }
+   setIsSubmited(true)
 
   }
 
-  const [isSubmited, setIsSubmited] = React.useState(true);
+  const [isSubmited, setIsSubmited] = React.useState(false);
    if(!isSubmited)return (
-    <Form onSubmit={(e)=>handleSubmit(e)}>
+    <Form onSubmit={(e)=>handleSubmit(e)}  >
           <Label labelText='cardholder name'>
             <Input placeholder='e.g Jane Appleseed' form={form} setForm={setForm} field={'cardholderName'}></Input>
             {form.cardholderName.error ? <Error text={form.cardholderName.error}/> : <></>}
@@ -109,7 +112,7 @@ const Index = ({form, setForm}: Props) => {
     </Form>
   ) 
   return (
-  <Form onSubmit={(e)=> handleSubmit(e)}>
+  <Form onSubmit={(e)=> handleSubmit(e)} isSubmited={isSubmited}>
     <CompleteIcon />
     <Title />
     <Text />
