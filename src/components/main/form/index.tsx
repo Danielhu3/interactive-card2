@@ -7,6 +7,8 @@ import  Input from '../input/';
 import  Label  from '../label/';
 import  Error  from '../error/';
 import  CompleteIcon  from '../completeIcon/';
+import  Text  from '../text/';
+import  Title  from '../title/';
 
 type Props = {
   form: {
@@ -109,6 +111,8 @@ const Index = ({form, setForm}: Props) => {
   return (
   <Form onSubmit={(e)=> handleSubmit(e)}>
     <CompleteIcon />
+    <Title />
+    <Text />
     <Button text='Continue'/>
   </Form>
   )
