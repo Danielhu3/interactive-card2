@@ -3,7 +3,7 @@ import { formValues } from '../../../Hooks/useForm'
 import { Button } from './style'
 
 type Props = {
-  form: {
+  form?: {
     cardholderName: {
         value: string;
         error: string;
@@ -26,7 +26,7 @@ type Props = {
     };
     };
 
-    setForm: React.Dispatch<React.SetStateAction<{
+    setForm?: React.Dispatch<React.SetStateAction<{
       cardholderName: {
         value: string;
         error: string;
@@ -49,12 +49,17 @@ type Props = {
     };
       
   }>>;
+
+  text: string;
 }
-const index = ({form,setForm}:Props) => {
+const index = ({form,setForm, text}:Props) => {
+  if(form && setForm){
   const thisFormValues = formValues({form,setForm})
   return (
-    <Button type='submit' onClick={()=>thisFormValues.validate()}>Confirm</Button>
+    <Button type='submit' onClick={()=>thisFormValues.validate()}>{text}</Button>
   )
+  }
+  return <Button type='submit'>{text}</Button>
 }
 
 export default index

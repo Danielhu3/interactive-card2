@@ -57,13 +57,26 @@ type Props = {
 }
 const Index = ({form, setForm}: Props) => {
 
-  
-
-
   function handleSubmit(event: React.FormEvent<HTMLFormElement>){
     event.preventDefault()
+
+    if(isSubmited){
+      for (const key of Object.keys(form)){
+        setForm(oldValues=>({...oldValues, [key]: {'value':'', 'error': ''}}))
+      }
+      //setIsSubmited(false)
+      return
+    }
+
+
+
+    
+    
+
   }
-  return (
+
+  const [isSubmited, setIsSubmited] = React.useState(true);
+   if(!isSubmited)return (
     <Form onSubmit={(e)=>handleSubmit(e)}>
           <Label labelText='cardholder name'>
             <Input placeholder='e.g Jane Appleseed' form={form} setForm={setForm} field={'cardholderName'}></Input>
@@ -89,8 +102,13 @@ const Index = ({form, setForm}: Props) => {
               {form.cvc.error ? <Error text={form.cvc.error}/> : <></>}
             </Label>
           </DateCVC>
-          <Button form={form} setForm={setForm}/>
+          <Button form={form} setForm={setForm} text='Confirm'/>
     </Form>
+  ) 
+  return (
+  <Form onSubmit={(e)=> handleSubmit(e)}>
+    <Button text='Continue'/>
+  </Form>
   )
 }
 
